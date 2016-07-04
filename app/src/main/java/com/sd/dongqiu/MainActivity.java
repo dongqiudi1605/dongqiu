@@ -1,0 +1,12 @@
+package com.sd.dongqiu;
+
+import android.os.Bundle;
+
+public class MainActivity extends myActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+}
