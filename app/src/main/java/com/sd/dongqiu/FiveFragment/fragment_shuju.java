@@ -1,4 +1,4 @@
-package FiveFragment;
+package com.sd.dongqiu.FiveFragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,11 +12,11 @@ import com.sd.dongqiu.R;
 /**
  * Created by mr on 2016/7/5.
  */
-public class fragment_zhibo extends Fragment{
+public class fragment_shuju extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        View view=inflater.inflate(R.layout.fragment_zhibo, container, false);
+        View view=inflater.inflate(R.layout.fragment_shuju, container, false);
         return view;
     }
 }

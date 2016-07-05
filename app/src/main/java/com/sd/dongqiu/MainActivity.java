@@ -3,13 +3,16 @@ package com.sd.dongqiu;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 import android.widget.RadioGroup;
 
-import FiveFragment.fragment_add;
-import FiveFragment.fragment_index;
-import FiveFragment.fragment_quanzi;
-import FiveFragment.fragment_shuju;
-import FiveFragment.fragment_zhibo;
+import com.sd.dongqiu.FiveFragment.fragment_add;
+import com.sd.dongqiu.FiveFragment.fragment_index;
+import com.sd.dongqiu.FiveFragment.fragment_quanzi;
+import com.sd.dongqiu.FiveFragment.fragment_shuju;
+import com.sd.dongqiu.FiveFragment.fragment_zhibo;
 
 public class MainActivity extends myActivity {
     Fragment fragment_add,fragment_index,fragment_zhibo,fragment_quanzi,fragment_shuju;
@@ -19,6 +22,8 @@ public class MainActivity extends myActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initToolBar();
+
         mradioGroup = (RadioGroup) findViewById(R.id.radio_group);
         mradioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
             @Override
@@ -46,6 +51,16 @@ public class MainActivity extends myActivity {
         initFragment();
     }
 
+    private void initToolBar(){
+
+          Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0);
+        drawerLayout.setDrawerListener(toggle);
+        toggle.syncState();
+    }
 
     /**
      * 初始化Fragment

@@ -1,75 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.sd.dongqiu.MainActivity">
-    <RelativeLayout
-        android:id="@+id/fragment_container"
+    >
+    <include
+        layout="@layout/content_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"/>
+        android:layout_height="match_parent"/>
 
-    <RadioGroup
-        android:layout_alignParentBottom="true"
-        android:id="@+id/radio_group"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/rb_index"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="首页"
-            android:textColor="@drawable/bt_text"
-            android:drawableTop="@drawable/index_selsctor"
-            android:gravity="center"
-            android:checked="true"
-            android:button="@null"
-            android:layout_weight="1"/>
-        <RadioButton
-            android:id="@+id/rb_zhibo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="直播"
-            android:textColor="@drawable/bt_text"
-            android:drawableTop="@drawable/zhibo_selsctor"
-            android:gravity="center"
-            android:button="@null"
-            android:layout_weight="1"/>
-        <RadioButton
-            android:paddingTop="10dp"
-            android:id="@+id/rb_add"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+<android.support.design.internal.NavigationMenuItemView
+    android:id="@+id/navigation_header_container"
+    android:background="@color/colorPrimaryDark"
+    android:layout_width="400dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="left"
+    android:fitsSystemWindows="true"
+    >
 
-            android:drawableTop="@drawable/add_selsctor"
-            android:gravity="center"
-            android:button="@null"
-            android:layout_weight="1"/>
-        <RadioButton
-            android:id="@+id/rb_quanzi"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="圈子"
-            android:textColor="@drawable/bt_text"
-            android:drawableTop="@drawable/quanzi_selsctor"
-            android:gravity="center"
-            android:button="@null"
-            android:layout_weight="1"/>
-        <RadioButton
-            android:id="@+id/rb_shuju"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="数据"
-            android:textColor="@drawable/bt_text"
-            android:drawableTop="@drawable/shuju_selsctor"
-            android:gravity="center"
-            android:button="@null"
-            android:layout_weight="1"/>
-    </RadioGroup>
-</RelativeLayout>
+</android.support.design.internal.NavigationMenuItemView>
+</android.support.v4.widget.DrawerLayout>

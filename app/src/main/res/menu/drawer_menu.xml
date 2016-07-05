@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/g1">
+        <item
+            android:id="@+id/my_food"
+            android:icon="@android:drawable/ic_btn_speak_now"
+            android:title="我的美食"/>
+        <item
+            android:id="@+id/my_col"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="我的收藏"/>
+    </group>
+    <item
+        android:id="@+id/my_setting"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="设置"/>
+    <item
+        android:id="@+id/my_share"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="分享"/>
+    <item
+        android:id="@+id/about_me"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="关于我"/>
+</menu>

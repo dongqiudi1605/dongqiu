@@ -1,4 +1,4 @@
-package net;
+package com.sd.dongqiu.net;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
