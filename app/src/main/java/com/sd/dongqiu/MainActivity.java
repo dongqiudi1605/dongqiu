@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.widget.RadioGroup;
 
 import com.sd.dongqiu.FiveFragment.fragment_add;
@@ -17,11 +18,13 @@ import com.sd.dongqiu.FiveFragment.fragment_zhibo;
 public class MainActivity extends myActivity {
     Fragment fragment_add,fragment_index,fragment_zhibo,fragment_quanzi,fragment_shuju;
     private RadioGroup mradioGroup;
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        init();
         initToolBar();
 
         mradioGroup = (RadioGroup) findViewById(R.id.radio_group);
@@ -49,6 +52,10 @@ public class MainActivity extends myActivity {
                 }
             });
         initFragment();
+    }
+
+    private void init(){
+        drawerLayout=(DrawerLayout) findViewById(R.id.drawer_layout);
     }
 
     private void initToolBar(){
@@ -105,5 +112,14 @@ public class MainActivity extends myActivity {
         transaction.commit();
     }
 
+    @Override
+    public void onBackPressed(){
+        //如果侧拉菜单打开，则关闭侧拉菜单，否则直接退出应用
+        if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+            drawerLayout.closeDrawer(Gravity.LEFT);
+        } else {
+            super.onBackPressed();
+        }
+    }
 }
 
