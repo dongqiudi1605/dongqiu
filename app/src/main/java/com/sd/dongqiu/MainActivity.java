@@ -53,7 +53,7 @@ public class MainActivity extends myActivity {
 
     private void initToolBar(){
 
-          Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
