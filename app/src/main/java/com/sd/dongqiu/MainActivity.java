@@ -6,8 +6,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.sd.dongqiu.FiveFragment.fragment_add;
 import com.sd.dongqiu.FiveFragment.fragment_index;
@@ -114,14 +118,92 @@ public class MainActivity extends myActivity {
         transaction.commit();
     }
 
+    /**
+     * 侧拉菜单的点击事件
+     */
+    public void Side_pull_menu(View view) {
+        switch (view.getId()) {
+            case R.id.login_tv:
+                Log.d("MainActivity", "注册/登录");
+                break;
+            case R.id.user_icon_link:
+                Log.d("MainActivity", "@我的");
+                break;
+            case R.id.user_icon_praise:
+                Log.d("MainActivity", "赞我的");
+                break;
+            case R.id.user_icon_reply:
+                Log.d("MainActivity", "回复我的");
+                break;
+            case R.id.user_icon_collect:
+                Log.d("MainActivity", "我的收藏");
+                break;
+            case R.id.user_icon_message:
+                Log.d("MainActivity", "我的消息");
+                break;
+            case R.id.user_icon_order:
+                Log.d("MainActivity", "我的订单");
+                break;
+            case R.id.my_ouzoubei:
+                Log.d("MainActivity", "欧洲杯宝典");
+                break;
+            case R.id.my_zhongchao:
+                Log.d("MainActivity", "中超");
+                break;
+            case R.id.my_jiaolian:
+                Log.d("MainActivity", "我是教练");
+                break;
+            case R.id.user_icon_feedback:
+                Log.d("MainActivity", "反馈");
+                break;
+            case R.id.user_icon_search:
+                Log.d("MainActivity", "搜索");
+                break;
+            case R.id.user_icon_setting:
+                Log.d("MainActivity", "设置");
+                break;
+        }
+        //关闭左边的滑动菜单
+        drawerLayout.closeDrawer(Gravity.LEFT);
+    }
+
+    /**
+     * toolbar左侧的图标的点击事件
+     */
     @Override
-    public void onBackPressed(){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //判断左边的侧拉菜单是否打开
+                if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+                    drawerLayout.closeDrawer(Gravity.LEFT);
+                } else {
+                    drawerLayout.openDrawer(Gravity.LEFT);
+                }
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * 后退按钮
+     * 如果侧拉菜单打开，按1次后退按钮，关闭侧拉菜单。
+     * 侧拉菜单时，2s内按2次后退按钮，退出应用。
+     */
+    private long exitTime = 0;
+
+    @Override
+    public void onBackPressed() {
         //如果侧拉菜单打开，则关闭侧拉菜单，否则直接退出应用
         if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
             drawerLayout.closeDrawer(Gravity.LEFT);
+        } else if ((System.currentTimeMillis() - exitTime) > 2000) {  //System.currentTimeMillis()无论何时调用，肯定大于2000
+            Toast.makeText(getApplicationContext(), "再按一次退出懂球帝", Toast.LENGTH_LONG).show();
+            exitTime = System.currentTimeMillis();
         } else {
-            super.onBackPressed();
+            exitTime = 0;
+            finish();
+            System.exit(0);
         }
     }
 }
-

@@ -1,32 +1,143 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--侧拉菜单-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:background="@color/colorPrimary"
-                android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--头部-->
+    <RelativeLayout
+        android:id="@+id/my_head"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/colorPrimary">
 
-    <ImageView
-        android:id="@+id/iv"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/person_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="个人中心" />
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/person_center"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/ic_launcher" />
+
+        <Button
+            android:id="@+id/login_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/person_center"
+            android:layout_centerInParent="true"
+            android:onClick="Side_pull_menu"
+            android:text="注册/登录"
+            android:textColor="#16AC3A" />
+    </RelativeLayout>
+    <!--中间的-->
+    <LinearLayout
+        android:id="@+id/my_item"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="24dp"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_below="@id/my_head"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/person_center"
-        android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/user_icon_link"
+            style="@style/item"
+            android:drawableLeft="@mipmap/user_icon_link"
+            android:text="\@我的" />
+
+        <Button
+            android:id="@+id/user_icon_praise"
+            style="@style/item"
+            android:drawableLeft="@mipmap/user_icon_praise"
+            android:text="赞我的" />
+
+        <Button
+            android:id="@+id/user_icon_reply"
+            style="@style/item"
+            android:drawableLeft="@mipmap/user_icon_reply"
+            android:text="回复我的" />
+
+        <Button
+            android:id="@+id/user_icon_collect"
+            style="@style/item"
+            android:drawableLeft="@mipmap/user_icon_collect"
+            android:text="我的收藏" />
+
+        <Button
+            android:id="@+id/user_icon_message"
+            style="@style/item"
+            android:drawableLeft="@mipmap/user_icon_message"
+            android:text="我的消息" />
+
+        <Button
+            android:id="@+id/user_icon_order"
+            style="@style/item"
+            android:drawableLeft="@mipmap/user_icon_order"
+            android:text="我的订单" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/my_select"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/iv"
-        android:layout_marginLeft="24dp"
-        android:text="个人中心"/>
+        android:layout_below="@id/my_item"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
 
-    <TextView
-        android:id="@+id/login_tv"
-        android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/my_ouzoubei"
+            style="@style/bottom"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:text="欧洲杯宝典" />
+
+        <Button
+            android:id="@+id/my_zhongchao"
+            style="@style/bottom"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:text="中超" />
+
+        <Button
+            android:id="@+id/my_jiaolian"
+            style="@style/bottom"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:text="我是教练" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/my_set"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/person_center"
-        android:layout_marginLeft="24dp"
+        android:layout_below="@id/my_select"
+        android:orientation="horizontal">
 
-        android:text="请登录"/>
+        <Button
+            android:id="@+id/user_icon_feedback"
+            style="@style/bottom"
+            android:drawableLeft="@mipmap/user_icon_feedback"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="反馈" />
+
+        <Button
+            android:id="@+id/user_icon_search"
+            style="@style/bottom"
+            android:drawableLeft="@mipmap/user_icon_search"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="搜索" />
+
+        <Button
+            android:id="@+id/user_icon_setting"
+            style="@style/bottom"
+            android:drawableLeft="@mipmap/user_icon_setting"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="设置" />
+    </LinearLayout>
+
+
 </RelativeLayout>

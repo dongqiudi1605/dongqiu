@@ -9,72 +9,51 @@
         android:id="@+id/tool_bar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/mainColor"
+        android:background="@color/colorPrimary"
         app:title="懂球"></android.support.v7.widget.Toolbar>
 
     <RelativeLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        />
+        android:layout_weight="1" />
 
     <RadioGroup
-        android:layout_alignParentBottom="true"
         android:id="@+id/radio_group"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:orientation="horizontal">
+
         <RadioButton
             android:id="@+id/rb_index"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="首页"
-            android:textColor="@drawable/bt_text"
-            android:drawableTop="@drawable/index_selsctor"
-            android:gravity="center"
+            style="@style/RadioButton"
             android:checked="true"
-            android:button="@null"
-            android:layout_weight="1"/>
+            android:drawableTop="@drawable/index_selsctor"
+            android:text="首页" />
+
         <RadioButton
             android:id="@+id/rb_zhibo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="直播"
-            android:textColor="@drawable/bt_text"
+            style="@style/RadioButton"
             android:drawableTop="@drawable/zhibo_selsctor"
-            android:gravity="center"
-            android:button="@null"
-            android:layout_weight="1"/>
-        <RadioButton
-            android:paddingTop="10dp"
-            android:id="@+id/rb_add"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:text="直播"/>
 
+        <RadioButton
+            android:id="@+id/rb_add"
+            style="@style/RadioButton"
             android:drawableTop="@drawable/add_selsctor"
-            android:gravity="center"
-            android:button="@null"
-            android:layout_weight="1"/>
+            android:paddingTop="10dp" />
+
         <RadioButton
             android:id="@+id/rb_quanzi"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="圈子"
-            android:textColor="@drawable/bt_text"
+            style="@style/RadioButton"
             android:drawableTop="@drawable/quanzi_selsctor"
-            android:gravity="center"
-            android:button="@null"
-            android:layout_weight="1"/>
+            android:text="圈子"/>
+
         <RadioButton
             android:id="@+id/rb_shuju"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="数据"
-            android:textColor="@drawable/bt_text"
+            style="@style/RadioButton"
             android:drawableTop="@drawable/shuju_selsctor"
-            android:gravity="center"
-            android:button="@null"
-            android:layout_weight="1"/>
+            android:text="数据"/>
     </RadioGroup>
 </LinearLayout>
