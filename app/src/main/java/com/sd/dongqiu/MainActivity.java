@@ -62,6 +62,8 @@ public class MainActivity extends myActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        toolbar.setNavigationIcon(R.mipmap.demo_tab_icon_contact_normal);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0);
