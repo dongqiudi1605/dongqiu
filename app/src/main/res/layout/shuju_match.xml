@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@color/darkColor"
+    android:orientation="horizontal"
+    android:weightSum="10">
+    <!--水平-->
+    <!--时间-->
+    <TextView
+        android:id="@+id/sj_match_tv1"
+        android:layout_weight="3"
+        style="@style/recyclerView"/>
+    <!--对手a-->
+    <TextView
+        android:id="@+id/sj_match_tv2"
+        style="@style/recyclerView"
+        android:layout_weight="3"
+        android:gravity="right" />
+    <!--比分-->
+    <TextView
+        android:id="@+id/sj_match_tv3"
+        style="@style/recyclerView"
+        android:layout_weight="1"
+        android:text="VS" />
+    <!--对手b-->
+    <TextView
+        android:id="@+id/sj_match_tv4"
+        style="@style/recyclerView"
+        android:layout_weight="3" />
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/shuju_LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/darkColor">
+
+        <RadioGroup
+            android:padding="10dp"
+            android:id="@+id/shuju_vp_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:text="积分"
+                android:id="@+id/shuju_vp_rb1"
+                style="@style/shuju_btn" />
+
+            <RadioButton
+                android:text="射手"
+                android:id="@+id/shuju_vp_rb2"
+                style="@style/shuju_btn" />
+
+            <RadioButton
+                android:text="助攻"
+                android:id="@+id/shuju_vp_rb3"
+                style="@style/shuju_btn" />
+
+            <RadioButton
+                android:text="赛程"
+                android:id="@+id/shuju_vp_rb4"
+                style="@style/shuju_btn" />
+        </RadioGroup>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/shuju_vp_RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_below="@id/shuju_LinearLayout"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+  <!-- <ListView
+        android:id="@+id/shuju_viewpager_body"
+        android:layout_below="@id/shuju_LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>-->
+
+    <TextView
+        android:id="@+id/nodata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="数据加载失败，点击重新加载！"
+        android:visibility="gone"/>
+
+   <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:progressBarStyleLarge"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

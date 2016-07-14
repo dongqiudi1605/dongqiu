@@ -14,7 +14,7 @@ public class WelcomeActivity extends myActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                SystemClock.sleep(1000);
+                SystemClock.sleep(100);
                 startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
                 WelcomeActivity.this.finish();
             }

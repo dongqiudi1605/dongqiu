@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@color/darkColor"
+    android:orientation="horizontal"
+    android:weightSum="10">
+    <!--射手、助攻-->
+    <!--名次-->
+    <TextView
+        android:id="@+id/sj_ss_tv1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    <!--球员-->
+    <TextView
+        android:gravity="right"
+        android:id="@+id/sj_ss_tv2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"/>
+    <!--球队-->
+    <TextView
+        android:id="@+id/sj_ss_tv3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"/>
+    <!--进球、助攻次数-->
+    <TextView
+        android:id="@+id/sj_jfs_tv4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"/>
+
+</LinearLayout>
